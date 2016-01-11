@@ -1,0 +1,15 @@
+// test file for compiling scss
+
+@import "../advanced-media-queries";
+
+div {
+    width: 100%;
+    &:nth-child(odd) {
+        @extend .portrait-only;
+        background-color: #eef;
+    }
+    &:nth-child(even) {
+        @extend .landscape-only;
+        background-color: #ccf;
+    }
+}

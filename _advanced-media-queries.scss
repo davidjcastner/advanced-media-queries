@@ -1,0 +1,25 @@
+// breakpoints
+/*
+$mobile-breakpoint
+$tablet-breakpoint
+$desktop-breakpoint
+*/
+
+// Classes available in css
+
+.show-on-mobile {}
+.show-on-tablet {}
+.show-on-desktop {}
+.hide-on-mobile {}
+.hide-on-tablet {}
+.hide-on-desktop {}
+.portrait-only {
+    @media only screen and (orientation: portrait) {
+        color: red;
+    }
+}
+.landscape-only {
+    @media only screen and (orientation: landscape) {
+        color: green;
+    }
+}

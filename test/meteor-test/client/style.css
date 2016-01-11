@@ -1,0 +1,21 @@
+/*
+$mobile-breakpoint
+$tablet-breakpoint
+$desktop-breakpoint
+*/
+@media only screen and (orientation: portrait) {
+  .portrait-only, div:nth-child(odd) {
+    color: red; } }
+
+@media only screen and (orientation: landscape) {
+  .landscape-only, div:nth-child(even) {
+    color: green; } }
+
+div {
+  width: 100%; }
+  div:nth-child(odd) {
+    background-color: #eef; }
+  div:nth-child(even) {
+    background-color: #ccf; }
+
+/*# sourceMappingURL=style.css.map */
