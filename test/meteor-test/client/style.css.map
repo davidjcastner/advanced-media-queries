@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACA;;;;EAIE;AAWE,8CAA+C;EADnD,kCAAe;IAEP,KAAK,EAAE,GAAG;;AAId,+CAAgD;EADpD,oCAAgB;IAER,KAAK,EAAE,KAAK;;AClBpB,GAAI;EACA,KAAK,EAAE,IAAI;EACX,kBAAiB;IAEb,gBAAgB,EAAE,IAAI;EAE1B,mBAAkB;IAEd,gBAAgB,EAAE,IAAI",
-"sources": ["../../../_advanced-media-queries.scss","../../test.scss"],
-"names": [],
-"file": "style.css"
-}

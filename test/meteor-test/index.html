@@ -1,0 +1,32 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  {{> controlTests}}
+  <!--{{> displayTests}}-->
+  {{> customStylingTests}}
+</body>
+
+<template name="controlTests">
+  <div id="mobile-landscape" class="test-div important-div">mobile landscape</div>
+  <div id="mobile-portrait" class="test-div important-div">mobile portrait</div>
+  <div id="tablet-landscape" class="test-div important-div">tablet landscape</div>
+  <div id="tablet-portrait" class="test-div important-div">tablet portrait</div>
+  <div id="desktop-landscape" class="test-div important-div">desktop landscape</div>
+  <div id="desktop-portrait" class="test-div important-div">desktop portrait</div>
+</template>
+
+<template name="displayTests">
+  <div id="mobile-hide" class="test-div">tablet || desktop</div>
+  <div id="tablet-hide" class="test-div">mobile || desktop</div>
+  <div id="desktop-hide" class="test-div">mobile || tablet</div>
+  <div id="custom-show-min" class="test-div">custom show min</div>
+  <div id="custom-show-max" class="test-div">custom show max</div>
+  <div id="custom-show-min-max" class="test-div">custom show min max</div>
+  <div id="custom-hide-min" class="test-div">custom hide min</div>
+  <div id="custom-hide-max" class="test-div">custom hide max</div>
+  <div id="custom-hide-min-max" class="test-div">custom hide min max</div>
+</template>
+
+<template name="customStylingTests">
+</template>

@@ -1,25 +1,175 @@
 // breakpoints
-/*
-$mobile-breakpoint
-$tablet-breakpoint
-$desktop-breakpoint
-*/
+
+/*** Platform breakpoints ***/
+//           mobile  <  MTB
+//  MTB  <=  tablet  <  TDB
+//  TDB  <   desktop
+$mobile-tablet-breakpoint: 768px;   // (MTB)
+$tablet-desktop-breakpoint: 1024px; // (TDB)
+$mobile-upper-breakpoint: $mobile-tablet-breakpoint - 1;
+$tablet-lower-breakpoint: $mobile-tablet-breakpoint;
+$tablet-upper-breakpoint: $tablet-desktop-breakpoint - 1;
+$desktop-lower-breakpoint: $tablet-desktop-breakpoint;
+
+// Helpers
+@mixin hide { display: none !important; }
 
 // Classes available in css
+/*
+    @media only screen and (min-width: $pixels) and (max-width: $pixels) {
+        @include hide;
+    }
+*/
 
-.show-on-mobile {}
-.show-on-tablet {}
-.show-on-desktop {}
-.hide-on-mobile {}
-.hide-on-tablet {}
-.hide-on-desktop {}
-.portrait-only {
-    @media only screen and (orientation: portrait) {
-        color: red;
+/* how to use:
+    @include mobile-only-style { style_for_mobile_devices };
+*/
+@mixin mobile-only-style {
+    @media only screen and (max-width: $mobile-upper-breakpoint) {
+        @content;
     }
 }
-.landscape-only {
+@mixin tablet-only-style {
+    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
+        @content;
+    }
+}
+@mixin desktop-only-style {
+    @media only screen and (min-width: $desktop-lower-breakpoint) {
+        @content;
+    }
+}
+@mixin portrait-only-style {
+    @media only screen and (orientation: portrait) {
+        @content;
+    }
+}
+@mixin landscape-only-style {
     @media only screen and (orientation: landscape) {
-        color: green;
+        @content;
+    }
+}
+
+// custom breakpoint custom style
+/* custom-breakpoint-style applies the style if
+    [$min <=] screen width [< $max] */
+@mixin custom-breakpoint-style($min: false, $max: false) {
+    @if not $min {
+        @if not $max {
+            @error "at least one of $min or $max must be defined";
+        }
+        @if $max {
+            // only a max value was defined
+            @media only screen and (max-width: $max - 1) {
+                @content;
+            }
+        }
+    }
+    @if $min {
+        @if not $max {
+            // only a min value was defined
+            @media only screen and (min-width: $min) {
+                @content;
+            }
+        }
+        @if $max {
+            // both a min and max value were defined
+            @media only screen and (min-width: $min) and (max-width: $max - 1) {
+                @content;
+            }
+        }
+    }
+}
+
+.mobile-only, .show-on-mobile {
+    @media only screen and (min-width: $tablet-lower-breakpoint) {
+        @include hide;
+    }
+}
+.tablet-only, .show-on-tablet {
+    @media only screen and (max-width: $mobile-upper-breakpoint) {
+        @include hide;
+    }
+    @media only screen and (min-width: $desktop-lower-breakpoint) {
+        @include hide;
+    }
+}
+.desktop-only, .show-on-desktop {
+    @media only screen and (max-width: $tablet-upper-breakpoint) {
+        @include hide;
+    }
+}
+.hide-on-mobile {
+    @media only screen and (max-width: $mobile-upper-breakpoint) {
+        @include hide;
+    }
+}
+.hide-on-tablet {
+    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
+        @include hide;
+    }
+}
+.hide-on-desktop {
+    @media only screen and (min-width: $desktop-lower-breakpoint) {
+        @include hide;
+    }
+}
+.portrait-only, .show-on-portrait, .hide-on-landscape {
+    @media only screen and (orientation: landscape) {
+        @include hide;
+    }
+}
+.landscape-only, .show-on-landscape, .hide-on-portrait {
+    @media only screen and (orientation: portrait) {
+        @include hide;
+    }
+}
+
+/*** Custom breakpoints ***/
+// no support for orientation yet
+/* custom-breakpoint-show only displays the element if
+    [$min <=] screen width [< $max] */
+@mixin custom-breakpoint-show($min: false, $max: false) {
+    @if (not $min) and (not $max) {
+        @error "at least one of $min or $max must be defined";
+    }
+    @if $min {
+        @media only screen and (max-width: $min - 1) {
+            @include hide;
+        }
+    }
+    @if $max {
+        @media only screen and (min-width: $max) {
+            @include hide;
+        }
+    }
+}
+/* custom-breakpoint-hide hides the element if
+    [$min <=] screen width [< $max] */
+@mixin custom-breakpoint-hide($min: false, $max: false, $orientation: false) {
+    @if not $min {
+        @if not $max {
+            @error "at least one of $min or $max must be defined";
+        }
+        @if $max {
+            // only a max value was defined
+            @media only screen and (max-width: $max - 1) {
+                @include hide;
+            }
+        }
+    }
+    @if $min {
+        @if not $max {
+            // only a min value was defined
+            @media only screen and (min-width: $min) {
+                @include hide;
+            }
+        }
+        @if $max {
+            // both a min and max value were defined
+            @media only screen and (min-width: $min) and (max-width: $max - 1) {
+                @include hide;
+            }
+        }
     }
 }

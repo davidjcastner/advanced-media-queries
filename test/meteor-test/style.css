@@ -1,0 +1,141 @@
+/*** Platform breakpoints ***/
+/*
+    @media only screen and (min-width: $pixels) and (max-width: $pixels) {
+        @include hide;
+    }
+*/
+/* how to use:
+    @include mobile-only-style { style_for_mobile_devices };
+*/
+/* custom-breakpoint-style applies the style if
+    [$min <=] screen width [< $max] */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+@media only screen and (min-width: 768px) {
+  .mobile-only, .show-on-mobile, #mobile-landscape, #mobile-portrait {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) {
+  .tablet-only, .show-on-tablet, #tablet-landscape, #tablet-portrait {
+    display: none !important; } }
+@media only screen and (min-width: 1024px) {
+  .tablet-only, .show-on-tablet, #tablet-landscape, #tablet-portrait {
+    display: none !important; } }
+
+@media only screen and (max-width: 1023px) {
+  .desktop-only, .show-on-desktop, #desktop-landscape, #desktop-portrait {
+    display: none !important; } }
+
+@media only screen and (max-width: 767px) {
+  .hide-on-mobile, #mobile-hide {
+    display: none !important; } }
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .hide-on-tablet, #tablet-hide {
+    display: none !important; } }
+
+@media only screen and (min-width: 1024px) {
+  .hide-on-desktop, #desktop-hide {
+    display: none !important; } }
+
+@media only screen and (orientation: landscape) {
+  .portrait-only, #mobile-portrait, #tablet-portrait, #desktop-portrait, .show-on-portrait, .hide-on-landscape {
+    display: none !important; } }
+
+@media only screen and (orientation: portrait) {
+  .landscape-only, #mobile-landscape, #tablet-landscape, #desktop-landscape, .show-on-landscape, .hide-on-portrait {
+    display: none !important; } }
+
+/*** Custom breakpoints ***/
+/* custom-breakpoint-show only displays the element if
+    [$min <=] screen width [< $max] */
+/* custom-breakpoint-hide hides the element if
+    [$min <=] screen width [< $max] */
+@media only screen and (max-width: 599px) {
+  #custom-show-min {
+    display: none !important; } }
+
+@media only screen and (min-width: 900px) {
+  #custom-show-max {
+    display: none !important; } }
+
+@media only screen and (max-width: 599px) {
+  #custom-show-min-max {
+    display: none !important; } }
+@media only screen and (min-width: 900px) {
+  #custom-show-min-max {
+    display: none !important; } }
+
+@media only screen and (min-width: 900px) {
+  #custom-hide-min {
+    display: none !important; } }
+
+@media only screen and (max-width: 1099px) {
+  #custom-hide-max {
+    display: none !important; } }
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  #custom-hide-min-max {
+    display: none !important; } }
+
+.test-div {
+  width: 240px;
+  height: 60px;
+  margin: 8px;
+  border-radius: 2px;
+  display: block;
+  font-family: Open Sans, sans-serif;
+  text-align: center;
+  line-height: 60px;
+  vertical-align: middle;
+  text-transform: capitalize;
+  font-weight: 300; }
+  .test-div.important-div {
+    font-weight: 600; }
+
+/* div colors */
+#mobile-landscape {
+  background-color: rgba(255, 0, 0, 0.5); }
+
+#mobile-portrait {
+  background-color: rgba(255, 255, 0, 0.5); }
+
+#tablet-landscape {
+  background-color: rgba(0, 255, 0, 0.5); }
+
+#tablet-portrait {
+  background-color: rgba(0, 255, 255, 0.5); }
+
+#desktop-landscape {
+  background-color: rgba(0, 0, 255, 0.5); }
+
+#desktop-portrait {
+  background-color: rgba(255, 0, 255, 0.5); }
+
+#mobile-hide {
+  background-color: rgba(255, 0, 0, 0.7); }
+
+#tablet-hide {
+  background-color: rgba(0, 255, 0, 0.7); }
+
+#desktop-hide {
+  background-color: rgba(0, 0, 255, 0.7); }
+
+#custom-show-min {
+  background-color: rgba(255, 0, 0, 0.5); }
+
+#custom-show-max {
+  background-color: rgba(0, 255, 0, 0.5); }
+
+#custom-show-min-max {
+  background-color: rgba(255, 255, 0, 0.5); }
+
+#custom-hide-min {
+  background-color: rgba(255, 0, 0, 0.5); }
+
+#custom-hide-max {
+  background-color: rgba(0, 255, 0, 0.5); }
+
+#custom-hide-min-max {
+  background-color: rgba(255, 255, 0, 0.5); }
+
+/*# sourceMappingURL=style.css.map */
