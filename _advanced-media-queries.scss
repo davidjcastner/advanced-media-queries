@@ -1,9 +1,7 @@
-/*
-    Advanced Media Queries v1.0
-    David Castner
-*/
+/* Advanced Media Queries v1.0 */
+//  David Castner
 
-/*** Platform breakpoints ***/
+//  Platform breakpoints
 //           mobile  <  MTB
 //  MTB  <=  tablet  <  TDB
 //  TDB  <   desktop
@@ -17,20 +15,20 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 // Helpers
 @mixin hide { display: none !important; }
 
-// Classes available in css
-/*
-    show-on-mobile
-    show-on-tablet
-    show-on-desktop
-    show-on-portrait
-    show-on-landscape
+//  Classes available in css:
+//
+//  show-on-mobile
+//  show-on-tablet
+//  show-on-desktop
+//  show-on-portrait
+//  show-on-landscape
+//
+//  hide-on-mobile
+//  hide-on-tablet
+//  hide-on-desktop
+//  hide-on-portrait
+//  hide-on-landscape
 
-    hide-on-mobile
-    hide-on-tablet
-    hide-on-desktop
-    hide-on-portrait
-    hide-on-landscape
-*/
 .show-on-mobile {
     @media only screen and (min-width: $tablet-lower-breakpoint) {
         @include hide;
@@ -75,14 +73,12 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     }
 }
 
-// mixins available in scss
-/* 
-    @include mobile-only-style { style_for_media_query };
-    @include tablet-only-style { style_for_media_query };
-    @include desktop-only-style { style_for_media_query };
-    @include portrait-only-style { style_for_media_query };
-    @include landscape-only-style { style_for_media_query };
-*/
+//  Mixins available in scss:
+//  @include mobile-only-style { style_for_media_query };
+//  @include tablet-only-style { style_for_media_query };
+//  @include desktop-only-style { style_for_media_query };
+//  @include portrait-only-style { style_for_media_query };
+//  @include landscape-only-style { style_for_media_query };
 @mixin mobile-only-style {
     @media only screen and (max-width: $mobile-upper-breakpoint) {
         @content;
@@ -109,15 +105,15 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     }
 }
 
-/*** Custom breakpoints ***/
-/* custom-breakpoint-show only displays the element if
-    [$min <=] screen width [< $max]
+// CUSTOM BREAKPOINTS
 
-    Examples:
-        @include custom-breakpoint-show($min: $show-min-breakpoint);
-        @include custom-breakpoint-show($max: $show-max-breakpoint);
-        @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
-*/
+//  custom-breakpoint-show 
+//  only displays the element if [$min <=] screen width [< $max]
+//
+//  Examples:
+//      @include custom-breakpoint-show($min: $show-min-breakpoint);
+//      @include custom-breakpoint-show($max: $show-max-breakpoint);
+//      @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
 @mixin custom-breakpoint-show($min: false, $max: false) {
     @if (not $min) and (not $max) {
         @error "at least one of $min or $max must be defined";
@@ -133,14 +129,14 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
         }
     }
 }
-/* custom-breakpoint-hide hides the element if
-    [$min <=] screen width [< $max]
 
-    Examples:
-        @include custom-breakpoint-hide($min: $hide-min-breakpoint);
-        @include custom-breakpoint-hide($max: $hide-max-breakpoint);
-        @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
-*/
+//  custom-breakpoint-hide
+//  hides the element if [$min <=] screen width [< $max]
+//
+//  Examples:
+//      @include custom-breakpoint-hide($min: $hide-min-breakpoint);
+//      @include custom-breakpoint-hide($max: $hide-max-breakpoint);
+//      @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
 @mixin custom-breakpoint-hide($min: false, $max: false) {
     @if not $min {
         @if not $max {
@@ -169,15 +165,13 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     }
 }
 
-// custom breakpoint custom style
-/* custom-breakpoint-style applies the style if
-    [$min <=] screen width [< $max]
-
-    Examples:
-        @include custom-breakpoint-style($min: $style-min-breakpoint) { style_for_media_query };
-        @include custom-breakpoint-style($max: $style-max-breakpoint) { style_for_media_query };
-        @include custom-breakpoint-style($min: $style-min-breakpoint, $max: $style-max-breakpoint) { style_for_media_query };
-*/
+//  custom-breakpoint-style
+//  applies the style if [$min <=] screen width [< $max]
+//
+//  Examples:
+//      @include custom-breakpoint-style($min: $style-min-breakpoint) { style_for_media_query };
+//      @include custom-breakpoint-style($max: $style-max-breakpoint) { style_for_media_query };
+//      @include custom-breakpoint-style($min: $style-min-breakpoint, $max: $style-max-breakpoint) { style_for_media_query };
 @mixin custom-breakpoint-style($min: false, $max: false) {
     @if not $min {
         @if not $max {
