@@ -62,6 +62,18 @@
   #custom-hide-min-max {
     display: none !important; } }
 
+#rotating-style {
+  font-weight: 600; }
+  @media only screen and (max-width: 767px) {
+    #rotating-style {
+      color: #f00; } }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #rotating-style {
+      color: #0f0; } }
+  @media only screen and (min-width: 1024px) {
+    #rotating-style {
+      color: #00f; } }
+
 @media only screen and (max-width: 767px) {
   #mobile-style {
     color: #00f;

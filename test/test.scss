@@ -51,6 +51,12 @@ $hide-max-breakpoint: 1100px;
     @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
 }
 
+#rotating-style {
+    font-weight: 600;
+    @include mobile-only-style { color: #f00 };
+    @include tablet-only-style { color: #0f0 };
+    @include desktop-only-style { color: #00f };
+}
 #mobile-style {
     @include mobile-only-style {
         color: #00f;
