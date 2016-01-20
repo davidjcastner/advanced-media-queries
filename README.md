@@ -3,37 +3,142 @@ CSS classes and Sass mixins useful in responsive design.
 
 **Table of Contents**
 
+* [Installing](#installing)  
+* [Browser Support](#browser-support)  
 * [CSS Classes](#css-classes)  
     * [Show Classes](#show-classes)  
-    * [Hide Classes](#hide-classes)  
-* [SCSS Mixins](#scss-mixins)  
-    * [Display Mixins](#display-mixins)  
         * [show-on-mobile](#show-on-mobile)  
         * [show-on-tablet](#show-on-tablet)  
         * [show-on-desktop](#show-on-desktop)  
         * [show-on-portrait](#show-on-portrait)  
         * [show-on-landscape](#show-on-landscape)  
+    * [Hide Classes](#hide-classes)  
         * [hide-on-mobile](#hide-on-mobile)  
         * [hide-on-tablet](#hide-on-tablet)  
         * [hide-on-desktop](#hide-on-desktop)  
         * [hide-on-portrait](#hide-on-portrait)  
         * [hide-on-landscape](#hide-on-landscape)  
+* [SCSS Mixins](#scss-mixins)  
+    * [Display Mixins](#display-mixins)  
+        * [show-on-mobile](#mixin-show-on-mobile)  
+        * [show-on-tablet](#mixin-show-on-tablet)  
+        * [show-on-desktop](#mixin-show-on-desktop)  
+        * [show-on-portrait](#mixin-show-on-portrait)  
+        * [show-on-landscape](#mixin-show-on-landscape)  
+        * [hide-on-mobile](#mixin-hide-on-mobile)  
+        * [hide-on-tablet](#mixin-hide-on-tablet)  
+        * [hide-on-desktop](#mixin-hide-on-desktop)  
+        * [hide-on-portrait](#mixin-hide-on-portrait)  
+        * [hide-on-landscape](#mixin-hide-on-landscape)  
     * [Style Mixins](#style-mixins)  
-        * [mobile-only-style](#mobile-only-style)  
-        * [tablet-only-style](#tablet-only-style)  
-        * [desktop-only-style](#desktop-only-style)  
-        * [portrait-only-style](#portrait-only-style)  
-        * [landscape-only-style](#landscape-only-style)  
+        * [mobile-only-style](#mixin-mobile-only-style)  
+        * [tablet-only-style](#mixin-tablet-only-style)  
+        * [desktop-only-style](#mixin-desktop-only-style)  
+        * [portrait-only-style](#mixin-portrait-only-style)  
+        * [landscape-only-style](#mixin-landscape-only-style)  
     * [Custom Breakpoint Mixins](#custom-breakpoint-mixins)  
-        * [custom-breakpoint-show](#custom-breakpoint-show)  
-        * [custom-breakpoint-hide](#custom-breakpoint-hide)  
-        * [custom-breakpoint-style](#custom-breakpoint-style)  
+        * [custom-breakpoint-show](#mixin-custom-breakpoint-show)  
+        * [custom-breakpoint-hide](#mixin-custom-breakpoint-hide)  
+        * [custom-breakpoint-style](#mixin-custom-breakpoint-style)  
+
+## Installing
+
+```scss
+// Advanced Media Queries
+@import "advanced-media-queries";
+
+// or Advanced Media Queries with css classes available
+// automatically includes the normal package
+@import "advanced-media-queries-classes";
+```
+
+## Browser Support
 
 ## CSS Classes
 
 #### Show Classes
 
+##### show-on-mobile
+
+Elements with this class are only displayed on mobile.
+
+```css
+.show-on-mobile
+```
+
+##### show-on-tablet
+
+Elements with this class are only displayed on tablet.
+
+```css
+.show-on-tablet
+```
+
+##### show-on-desktop
+
+Elements with this class are only displayed on desktop.
+
+```css
+.show-on-desktop
+```
+
+##### show-on-portrait
+
+Elements with this class are only displayed on portrait.
+
+```css
+.show-on-portrait
+```
+
+##### show-on-landscape
+
+Elements with this class are only displayed on landscape.
+
+```css
+.show-on-landscape
+```
+
 #### Hide Classes
+
+##### hide-on-mobile
+
+Elements with this class are hidden on mobile.
+
+```css
+.hide-on-mobile
+```
+
+##### hide-on-tablet
+
+Elements with this class are hidden on tablet.
+
+```css
+.hide-on-tablet
+```
+
+##### hide-on-desktop
+
+Elements with this class are hidden on desktop.
+
+```css
+.hide-on-desktop
+```
+
+##### hide-on-portrait
+
+Elements with this class are hidden on portrait.
+
+```css
+.hide-on-portrait
+```
+
+##### hide-on-landscape
+
+Elements with this class are hidden on landscape.
+
+```css
+.hide-on-landscape
+```
 
 ## SCSS Mixins
 
@@ -41,7 +146,7 @@ CSS classes and Sass mixins useful in responsive design.
 
 #### Helpers
 
-##### advanced-media-queries-hide
+##### @mixin advanced-media-queries-hide;
 
 Hides the content, equivalent to  `{ display: none !important; }`
 
@@ -53,7 +158,9 @@ Usage:
 
 #### Display Mixins
 
-##### show-on-mobile
+##### @mixin show-on-mobile;
+
+Selectors with this mixin included are only displayed on mobile.
 
 Usage:
 
@@ -61,7 +168,9 @@ Usage:
 @include show-on-mobile;
 ```
 
-##### show-on-tablet
+##### @mixin show-on-tablet;
+
+Selectors with this mixin included are only displayed on tablet.
 
 Usage:
 
@@ -69,7 +178,9 @@ Usage:
 @include show-on-tablet;
 ```
 
-##### show-on-desktop
+##### @mixin show-on-desktop;
+
+Selectors with this mixin included are only displayed on desktop.
 
 Usage:
 
@@ -77,7 +188,9 @@ Usage:
 @include show-on-desktop;
 ```
 
-##### show-on-portrait
+##### @mixin show-on-portrait;
+
+Selectors with this mixin included are only displayed on portrait.
 
 Usage:
 
@@ -85,7 +198,9 @@ Usage:
 @include show-on-portrait;
 ```
 
-##### show-on-landscape
+##### @mixin show-on-landscape;
+
+Selectors with this mixin included are only displayed on landscape.
 
 Usage:
 
@@ -93,7 +208,9 @@ Usage:
 @include show-on-landscape;
 ```
 
-##### hide-on-mobile
+##### @mixin hide-on-mobile;
+
+Selectors with this mixin included are hidden on mobile.
 
 Usage:
 
@@ -101,7 +218,9 @@ Usage:
 @include hide-on-mobile;
 ```
 
-##### hide-on-tablet
+##### @mixin hide-on-tablet;
+
+Selectors with this mixin included are hidden on tablet.
 
 Usage:
 
@@ -109,7 +228,9 @@ Usage:
 @include hide-on-tablet;
 ```
 
-##### hide-on-desktop
+##### @mixin hide-on-desktop;
+
+Selectors with this mixin included are hidden on desktop.
 
 Usage:
 
@@ -117,7 +238,9 @@ Usage:
 @include hide-on-desktop;
 ```
 
-##### hide-on-portrait
+##### @mixin hide-on-portrait;
+
+Selectors with this mixin included are hidden on portrait.
 
 Usage:
 
@@ -125,7 +248,9 @@ Usage:
 @include hide-on-portrait;
 ```
 
-##### hide-on-landscape
+##### @mixin hide-on-landscape;
+
+Selectors with this mixin included are hidden on landscape.
 
 Usage:
 
@@ -135,7 +260,7 @@ Usage:
 
 #### Style Mixins
 
-##### mobile-only-style
+##### @mixin mobile-only-style { @content };
 
 Usage:
 
@@ -143,7 +268,7 @@ Usage:
 @include mobile-only-style { style_for_media_query };
 ```
 
-##### tablet-only-style
+##### @mixin tablet-only-style { @content };
 
 Usage:
 
@@ -151,7 +276,7 @@ Usage:
 @include tablet-only-style { style_for_media_query };
 ```
 
-##### desktop-only-style
+##### @mixin desktop-only-style { @content };
 
 Usage:
 
@@ -159,7 +284,7 @@ Usage:
 @include desktop-only-style { style_for_media_query };
 ```
 
-##### portrait-only-style
+##### @mixin portrait-only-style { @content };
 
 Usage:
 
@@ -167,7 +292,7 @@ Usage:
 @include portrait-only-style { style_for_media_query };
 ```
 
-##### landscape-only-style
+##### @mixin landscape-only-style { @content };
 
 Usage:
 
@@ -177,7 +302,7 @@ Usage:
 
 #### Custom Breakpoint Mixins
 
-##### custom-breakpoint-show
+##### @mixin custom-breakpoint-show ([$min], [$max]);
 
 Usage:
 
@@ -187,7 +312,7 @@ Usage:
 @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
 ```
 
-##### custom-breakpoint-hide
+##### @mixin custom-breakpoint-hide ([$min], [$max]);
 
 Usage:
 
@@ -197,7 +322,7 @@ Usage:
 @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
 ```
 
-##### custom-breakpoint-style
+##### @mixin custom-breakpoint-style ([$min], [$max]) { @content };
 
 Usage:
 

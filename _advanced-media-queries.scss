@@ -18,7 +18,7 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 
 //  Helpers
 //  @include advanced-media-queries-hide;
-@mixin advanced-media-queries-hide { display: none !important; }
+@mixin advanced-media-queries-hide { display: none !important; };
 
 //  Display mixins available in scss:
 //
@@ -37,7 +37,7 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     @media only screen and (min-width: $tablet-lower-breakpoint) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin show-on-tablet {
     @media only screen and (max-width: $mobile-upper-breakpoint) {
         @include advanced-media-queries-hide;
@@ -45,47 +45,47 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     @media only screen and (min-width: $desktop-lower-breakpoint) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin show-on-desktop {
     @media only screen and (max-width: $tablet-upper-breakpoint) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin show-on-portrait {
     @media only screen and (orientation: landscape) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin show-on-landscape {
     @media only screen and (orientation: portrait) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin hide-on-mobile {
     @media only screen and (max-width: $mobile-upper-breakpoint) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin hide-on-tablet {
     @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin hide-on-desktop {
     @media only screen and (min-width: $desktop-lower-breakpoint) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin hide-on-portrait {
     @media only screen and (orientation: portrait) {
         @include advanced-media-queries-hide;
     }
-}
+};
 @mixin hide-on-landscape {
     @media only screen and (orientation: landscape) {
         @include advanced-media-queries-hide;
     }
-}
+};
 
 //  Style mixins available in scss:
 //  @include mobile-only-style { style_for_media_query };
@@ -97,27 +97,27 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     @media only screen and (max-width: $mobile-upper-breakpoint) {
         @content;
     }
-}
+};
 @mixin tablet-only-style {
     @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
         @content;
     }
-}
+};
 @mixin desktop-only-style {
     @media only screen and (min-width: $desktop-lower-breakpoint) {
         @content;
     }
-}
+};
 @mixin portrait-only-style {
     @media only screen and (orientation: portrait) {
         @content;
     }
-}
+};
 @mixin landscape-only-style {
     @media only screen and (orientation: landscape) {
         @content;
     }
-}
+};
 
 // CUSTOM BREAKPOINTS
 
@@ -131,18 +131,18 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 @mixin custom-breakpoint-show($min: false, $max: false) {
     @if (not $min) and (not $max) {
         @error "at least one of $min or $max must be defined";
-    }
+    };
     @if $min {
         @media only screen and (max-width: $min - 1) {
             @include advanced-media-queries-hide;
         }
-    }
+    };
     @if $max {
         @media only screen and (min-width: $max) {
             @include advanced-media-queries-hide;
         }
-    }
-}
+    };
+};
 
 //  custom-breakpoint-hide
 //  hides the element if [$min <=] screen width [< $max]
@@ -155,29 +155,29 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     @if not $min {
         @if not $max {
             @error "at least one of $min or $max must be defined";
-        }
+        };
         @if $max {
             // only a max value was defined
             @media only screen and (max-width: $max - 1) {
                 @include advanced-media-queries-hide;
             }
-        }
-    }
+        };
+    };
     @if $min {
         @if not $max {
             // only a min value was defined
             @media only screen and (min-width: $min) {
                 @include advanced-media-queries-hide;
             }
-        }
+        };
         @if $max {
             // both a min and max value were defined
             @media only screen and (min-width: $min) and (max-width: $max - 1) {
                 @include advanced-media-queries-hide;
             }
-        }
-    }
-}
+        };
+    };
+};
 
 //  custom-breakpoint-style
 //  applies the style if [$min <=] screen width [< $max]
@@ -190,26 +190,26 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     @if not $min {
         @if not $max {
             @error "at least one of $min or $max must be defined";
-        }
+        };
         @if $max {
             // only a max value was defined
             @media only screen and (max-width: $max - 1) {
                 @content;
             }
-        }
-    }
+        };
+    };
     @if $min {
         @if not $max {
             // only a min value was defined
             @media only screen and (min-width: $min) {
                 @content;
             }
-        }
+        };
         @if $max {
             // both a min and max value were defined
             @media only screen and (min-width: $min) and (max-width: $max - 1) {
                 @content;
             }
-        }
-    }
-}
+        };
+    };
+};
