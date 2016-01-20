@@ -1,4 +1,7 @@
-// breakpoints
+/*
+    Advanced Media Queries v1.0
+    David Castner
+*/
 
 /*** Platform breakpoints ***/
 //           mobile  <  MTB
@@ -16,13 +19,69 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 
 // Classes available in css
 /*
-    @media only screen and (min-width: $pixels) and (max-width: $pixels) {
+    show-on-mobile
+    show-on-tablet
+    show-on-desktop
+    show-on-portrait
+    show-on-landscape
+
+    hide-on-mobile
+    hide-on-tablet
+    hide-on-desktop
+    hide-on-portrait
+    hide-on-landscape
+*/
+.show-on-mobile {
+    @media only screen and (min-width: $tablet-lower-breakpoint) {
         @include hide;
     }
-*/
+}
+.show-on-tablet {
+    @media only screen and (max-width: $mobile-upper-breakpoint) {
+        @include hide;
+    }
+    @media only screen and (min-width: $desktop-lower-breakpoint) {
+        @include hide;
+    }
+}
+.show-on-desktop {
+    @media only screen and (max-width: $tablet-upper-breakpoint) {
+        @include hide;
+    }
+}
+.hide-on-mobile {
+    @media only screen and (max-width: $mobile-upper-breakpoint) {
+        @include hide;
+    }
+}
+.hide-on-tablet {
+    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
+        @include hide;
+    }
+}
+.hide-on-desktop {
+    @media only screen and (min-width: $desktop-lower-breakpoint) {
+        @include hide;
+    }
+}
+.show-on-portrait, .hide-on-landscape {
+    @media only screen and (orientation: landscape) {
+        @include hide;
+    }
+}
+.show-on-landscape, .hide-on-portrait {
+    @media only screen and (orientation: portrait) {
+        @include hide;
+    }
+}
 
-/* how to use:
-    @include mobile-only-style { style_for_mobile_devices };
+// mixins available in scss
+/* 
+    @include mobile-only-style { style_for_media_query };
+    @include tablet-only-style { style_for_media_query };
+    @include desktop-only-style { style_for_media_query };
+    @include portrait-only-style { style_for_media_query };
+    @include landscape-only-style { style_for_media_query };
 */
 @mixin mobile-only-style {
     @media only screen and (max-width: $mobile-upper-breakpoint) {
@@ -50,9 +109,75 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     }
 }
 
+/*** Custom breakpoints ***/
+/* custom-breakpoint-show only displays the element if
+    [$min <=] screen width [< $max]
+
+    Examples:
+        @include custom-breakpoint-show($min: $show-min-breakpoint);
+        @include custom-breakpoint-show($max: $show-max-breakpoint);
+        @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
+*/
+@mixin custom-breakpoint-show($min: false, $max: false) {
+    @if (not $min) and (not $max) {
+        @error "at least one of $min or $max must be defined";
+    }
+    @if $min {
+        @media only screen and (max-width: $min - 1) {
+            @include hide;
+        }
+    }
+    @if $max {
+        @media only screen and (min-width: $max) {
+            @include hide;
+        }
+    }
+}
+/* custom-breakpoint-hide hides the element if
+    [$min <=] screen width [< $max]
+
+    Examples:
+        @include custom-breakpoint-hide($min: $hide-min-breakpoint);
+        @include custom-breakpoint-hide($max: $hide-max-breakpoint);
+        @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
+*/
+@mixin custom-breakpoint-hide($min: false, $max: false) {
+    @if not $min {
+        @if not $max {
+            @error "at least one of $min or $max must be defined";
+        }
+        @if $max {
+            // only a max value was defined
+            @media only screen and (max-width: $max - 1) {
+                @include hide;
+            }
+        }
+    }
+    @if $min {
+        @if not $max {
+            // only a min value was defined
+            @media only screen and (min-width: $min) {
+                @include hide;
+            }
+        }
+        @if $max {
+            // both a min and max value were defined
+            @media only screen and (min-width: $min) and (max-width: $max - 1) {
+                @include hide;
+            }
+        }
+    }
+}
+
 // custom breakpoint custom style
 /* custom-breakpoint-style applies the style if
-    [$min <=] screen width [< $max] */
+    [$min <=] screen width [< $max]
+
+    Examples:
+        @include custom-breakpoint-style($min: $style-min-breakpoint) { style_for_media_query };
+        @include custom-breakpoint-style($max: $style-max-breakpoint) { style_for_media_query };
+        @include custom-breakpoint-style($min: $style-min-breakpoint, $max: $style-max-breakpoint) { style_for_media_query };
+*/
 @mixin custom-breakpoint-style($min: false, $max: false) {
     @if not $min {
         @if not $max {
@@ -76,99 +201,6 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
             // both a min and max value were defined
             @media only screen and (min-width: $min) and (max-width: $max - 1) {
                 @content;
-            }
-        }
-    }
-}
-
-.mobile-only, .show-on-mobile {
-    @media only screen and (min-width: $tablet-lower-breakpoint) {
-        @include hide;
-    }
-}
-.tablet-only, .show-on-tablet {
-    @media only screen and (max-width: $mobile-upper-breakpoint) {
-        @include hide;
-    }
-    @media only screen and (min-width: $desktop-lower-breakpoint) {
-        @include hide;
-    }
-}
-.desktop-only, .show-on-desktop {
-    @media only screen and (max-width: $tablet-upper-breakpoint) {
-        @include hide;
-    }
-}
-.hide-on-mobile {
-    @media only screen and (max-width: $mobile-upper-breakpoint) {
-        @include hide;
-    }
-}
-.hide-on-tablet {
-    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
-        @include hide;
-    }
-}
-.hide-on-desktop {
-    @media only screen and (min-width: $desktop-lower-breakpoint) {
-        @include hide;
-    }
-}
-.portrait-only, .show-on-portrait, .hide-on-landscape {
-    @media only screen and (orientation: landscape) {
-        @include hide;
-    }
-}
-.landscape-only, .show-on-landscape, .hide-on-portrait {
-    @media only screen and (orientation: portrait) {
-        @include hide;
-    }
-}
-
-/*** Custom breakpoints ***/
-// no support for orientation yet
-/* custom-breakpoint-show only displays the element if
-    [$min <=] screen width [< $max] */
-@mixin custom-breakpoint-show($min: false, $max: false) {
-    @if (not $min) and (not $max) {
-        @error "at least one of $min or $max must be defined";
-    }
-    @if $min {
-        @media only screen and (max-width: $min - 1) {
-            @include hide;
-        }
-    }
-    @if $max {
-        @media only screen and (min-width: $max) {
-            @include hide;
-        }
-    }
-}
-/* custom-breakpoint-hide hides the element if
-    [$min <=] screen width [< $max] */
-@mixin custom-breakpoint-hide($min: false, $max: false, $orientation: false) {
-    @if not $min {
-        @if not $max {
-            @error "at least one of $min or $max must be defined";
-        }
-        @if $max {
-            // only a max value was defined
-            @media only screen and (max-width: $max - 1) {
-                @include hide;
-            }
-        }
-    }
-    @if $min {
-        @if not $max {
-            // only a min value was defined
-            @media only screen and (min-width: $min) {
-                @include hide;
-            }
-        }
-        @if $max {
-            // both a min and max value were defined
-            @media only screen and (min-width: $min) and (max-width: $max - 1) {
-                @include hide;
             }
         }
     }

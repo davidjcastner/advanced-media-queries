@@ -3,7 +3,8 @@
 </head>
 <body>
   {{> controlTests}}
-  <!--{{> displayTests}}-->
+  {{> displayTests}}
+  {{> stylingTests}}
   {{> customStylingTests}}
 </body>
 
@@ -28,5 +29,14 @@
   <div id="custom-hide-min-max" class="test-div">custom hide min max</div>
 </template>
 
+<template name="stylingTests">
+  <div id="mobile-style" class="test-div style-div">mobile style</div>
+  <div id="tablet-style" class="test-div style-div">tablet style</div>
+  <div id="desktop-style" class="test-div style-div">desktop style</div>
+  <div id="portrait-style" class="test-div style-div">portrait style</div>
+  <div id="landscape-style" class="test-div style-div">landscape style</div>
+</template>
+
 <template name="customStylingTests">
+  <div id="custom-style" class="test-div style-div">custom style</div>
 </template>

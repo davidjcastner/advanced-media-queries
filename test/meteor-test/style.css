@@ -1,28 +1,35 @@
+/*
+    Advanced Media Queries v1.0
+    David Castner
+*/
 /*** Platform breakpoints ***/
 /*
-    @media only screen and (min-width: $pixels) and (max-width: $pixels) {
-        @include hide;
-    }
+    show-on-mobile
+    show-on-tablet
+    show-on-desktop
+    show-on-portrait
+    show-on-landscape
+
+    hide-on-mobile
+    hide-on-tablet
+    hide-on-desktop
+    hide-on-portrait
+    hide-on-landscape
 */
-/* how to use:
-    @include mobile-only-style { style_for_mobile_devices };
-*/
-/* custom-breakpoint-style applies the style if
-    [$min <=] screen width [< $max] */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 @media only screen and (min-width: 768px) {
-  .mobile-only, .show-on-mobile, #mobile-landscape, #mobile-portrait {
+  .show-on-mobile, #mobile-landscape, #mobile-portrait {
     display: none !important; } }
 
 @media only screen and (max-width: 767px) {
-  .tablet-only, .show-on-tablet, #tablet-landscape, #tablet-portrait {
+  .show-on-tablet, #tablet-landscape, #tablet-portrait {
     display: none !important; } }
 @media only screen and (min-width: 1024px) {
-  .tablet-only, .show-on-tablet, #tablet-landscape, #tablet-portrait {
+  .show-on-tablet, #tablet-landscape, #tablet-portrait {
     display: none !important; } }
 
 @media only screen and (max-width: 1023px) {
-  .desktop-only, .show-on-desktop, #desktop-landscape, #desktop-portrait {
+  .show-on-desktop, #desktop-landscape, #desktop-portrait {
     display: none !important; } }
 
 @media only screen and (max-width: 767px) {
@@ -38,18 +45,45 @@
     display: none !important; } }
 
 @media only screen and (orientation: landscape) {
-  .portrait-only, #mobile-portrait, #tablet-portrait, #desktop-portrait, .show-on-portrait, .hide-on-landscape {
+  .show-on-portrait, #mobile-portrait, #tablet-portrait, #desktop-portrait, .hide-on-landscape {
     display: none !important; } }
 
 @media only screen and (orientation: portrait) {
-  .landscape-only, #mobile-landscape, #tablet-landscape, #desktop-landscape, .show-on-landscape, .hide-on-portrait {
+  .show-on-landscape, #mobile-landscape, #tablet-landscape, #desktop-landscape, .hide-on-portrait {
     display: none !important; } }
 
+/* 
+    @include mobile-only-style { style_for_media_query };
+    @include tablet-only-style { style_for_media_query };
+    @include desktop-only-style { style_for_media_query };
+    @include portrait-only-style { style_for_media_query };
+    @include landscape-only-style { style_for_media_query };
+*/
 /*** Custom breakpoints ***/
 /* custom-breakpoint-show only displays the element if
-    [$min <=] screen width [< $max] */
+    [$min <=] screen width [< $max]
+
+    Examples:
+        @include custom-breakpoint-show($min: $show-min-breakpoint);
+        @include custom-breakpoint-show($max: $show-max-breakpoint);
+        @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
+*/
 /* custom-breakpoint-hide hides the element if
-    [$min <=] screen width [< $max] */
+    [$min <=] screen width [< $max]
+
+    Examples:
+        @include custom-breakpoint-hide($min: $hide-min-breakpoint);
+        @include custom-breakpoint-hide($max: $hide-max-breakpoint);
+        @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
+*/
+/* custom-breakpoint-style applies the style if
+    [$min <=] screen width [< $max]
+
+    Examples:
+        @include custom-breakpoint-style($min: $style-min-breakpoint) { style_for_media_query };
+        @include custom-breakpoint-style($max: $style-max-breakpoint) { style_for_media_query };
+        @include custom-breakpoint-style($min: $style-min-breakpoint, $max: $style-max-breakpoint) { style_for_media_query };
+*/
 @media only screen and (max-width: 599px) {
   #custom-show-min {
     display: none !important; } }
@@ -77,6 +111,36 @@
   #custom-hide-min-max {
     display: none !important; } }
 
+@media only screen and (max-width: 767px) {
+  #mobile-style {
+    color: #00f;
+    font-weight: 600; } }
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #tablet-style {
+    color: #00f;
+    font-weight: 600; } }
+
+@media only screen and (min-width: 1024px) {
+  #desktop-style {
+    color: #00f;
+    font-weight: 600; } }
+
+@media only screen and (orientation: portrait) {
+  #portrait-style {
+    color: #00f;
+    font-weight: 600; } }
+
+@media only screen and (orientation: landscape) {
+  #landscape-style {
+    color: #00f;
+    font-weight: 600; } }
+
+@media only screen and (min-width: 800px) and (max-width: 999px) {
+  #custom-style {
+    color: #00f;
+    font-weight: 600; } }
+
 .test-div {
   width: 240px;
   height: 60px;
@@ -91,6 +155,8 @@
   font-weight: 300; }
   .test-div.important-div {
     font-weight: 600; }
+  .test-div.style-div {
+    background-color: #ddd; }
 
 /* div colors */
 #mobile-landscape {

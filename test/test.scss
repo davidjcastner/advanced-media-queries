@@ -6,11 +6,11 @@
 
 // landscape-only settings
 #mobile-landscape, #tablet-landscape, #desktop-landscape {
-    @extend .landscape-only;
+    @extend .show-on-landscape;
 }
 // portrait-only settings
 #mobile-portrait, #tablet-portrait, #desktop-portrait {
-    @extend .portrait-only;
+    @extend .show-on-portrait;
 }
 // mobile-only settings
 #mobile-landscape, #mobile-portrait {
@@ -51,6 +51,45 @@ $hide-max-breakpoint: 1100px;
     @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
 }
 
+#mobile-style {
+    @include mobile-only-style {
+        color: #00f;
+        font-weight: 600;
+    }
+}
+#tablet-style {
+    @include tablet-only-style {
+        color: #00f;
+        font-weight: 600;
+    }
+}
+#desktop-style {
+    @include desktop-only-style {
+        color: #00f;
+        font-weight: 600;
+    }
+}
+#portrait-style {
+    @include portrait-only-style {
+        color: #00f;
+        font-weight: 600;
+    }
+}
+#landscape-style {
+    @include landscape-only-style {
+        color: #00f;
+        font-weight: 600;
+    }
+}
+$style-min-breakpoint: 800px;
+$style-max-breakpoint: 1000px;
+#custom-style {
+    @include custom-breakpoint-style($min: $style-min-breakpoint, $max: $style-max-breakpoint) {
+        color: #00f;
+        font-weight: 600;
+    };
+}
+
 .test-div {
     width: 240px;
     height: 60px;
@@ -65,6 +104,9 @@ $hide-max-breakpoint: 1100px;
     font-weight: 300;
     &.important-div {
         font-weight: 600;
+    }
+    &.style-div {
+        background-color: #ddd;
     }
 }
 
