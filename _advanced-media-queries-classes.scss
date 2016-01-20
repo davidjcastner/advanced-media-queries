@@ -1,0 +1,35 @@
+/* Advanced Media Queries Classes v1.0 */
+//  David Castner
+
+//  How to use:
+//  include this in at the top of your scss file
+//  @import "/path/to/file/advanced-media-queries-classes";
+//  including this file automatically includes all of
+//  _advanced-media-queries.scss
+@import "advanced-media-queries";
+
+//  Classes available in css:
+//
+//  show-on-mobile
+//  show-on-tablet
+//  show-on-desktop
+//  show-on-portrait
+//  show-on-landscape
+//
+//  hide-on-mobile
+//  hide-on-tablet
+//  hide-on-desktop
+//  hide-on-portrait
+//  hide-on-landscape
+
+// Display mixins in scss
+.show-on-mobile { @include show-on-mobile; }
+.show-on-tablet { @include show-on-tablet; }
+.show-on-desktop { @include show-on-desktop; }
+.show-on-portrait { @include show-on-portrait; }
+.show-on-landscape { @include show-on-landscape; }
+.hide-on-mobile { @include hide-on-mobile; }
+.hide-on-tablet { @include hide-on-tablet; }
+.hide-on-desktop { @include hide-on-desktop; }
+.hide-on-portrait { @include hide-on-portrait; }
+.hide-on-landscape { @include hide-on-landscape; }

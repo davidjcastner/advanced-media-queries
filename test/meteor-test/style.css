@@ -1,3 +1,4 @@
+/* Advanced Media Queries Classes v1.0 */
 /* Advanced Media Queries v1.0 */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 @media only screen and (min-width: 768px) {
@@ -15,6 +16,14 @@
   .show-on-desktop, #desktop-landscape, #desktop-portrait {
     display: none !important; } }
 
+@media only screen and (orientation: landscape) {
+  .show-on-portrait, #mobile-portrait, #tablet-portrait, #desktop-portrait {
+    display: none !important; } }
+
+@media only screen and (orientation: portrait) {
+  .show-on-landscape, #mobile-landscape, #tablet-landscape, #desktop-landscape {
+    display: none !important; } }
+
 @media only screen and (max-width: 767px) {
   .hide-on-mobile, #mobile-hide {
     display: none !important; } }
@@ -27,12 +36,12 @@
   .hide-on-desktop, #desktop-hide {
     display: none !important; } }
 
-@media only screen and (orientation: landscape) {
-  .show-on-portrait, #mobile-portrait, #tablet-portrait, #desktop-portrait, .hide-on-landscape {
+@media only screen and (orientation: portrait) {
+  .hide-on-portrait {
     display: none !important; } }
 
-@media only screen and (orientation: portrait) {
-  .show-on-landscape, #mobile-landscape, #tablet-landscape, #desktop-landscape, .hide-on-portrait {
+@media only screen and (orientation: landscape) {
+  .hide-on-landscape {
     display: none !important; } }
 
 @media only screen and (max-width: 599px) {

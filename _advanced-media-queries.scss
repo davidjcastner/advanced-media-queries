@@ -1,6 +1,10 @@
 /* Advanced Media Queries v1.0 */
 //  David Castner
 
+//  How to use:
+//  include this in at the top of your scss file
+//  @import "/path/to/file/advanced-media-queries";
+
 //  Platform breakpoints
 //           mobile  <  MTB
 //  MTB  <=  tablet  <  TDB
@@ -12,68 +16,78 @@ $tablet-lower-breakpoint: $mobile-tablet-breakpoint;
 $tablet-upper-breakpoint: $tablet-desktop-breakpoint - 1;
 $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 
-// Helpers
-@mixin hide { display: none !important; }
+//  Helpers
+//  @include advanced-media-queries-hide;
+@mixin advanced-media-queries-hide { display: none !important; }
 
-//  Classes available in css:
+//  Display mixins available in scss:
 //
-//  show-on-mobile
-//  show-on-tablet
-//  show-on-desktop
-//  show-on-portrait
-//  show-on-landscape
+//  @include show-on-mobile;
+//  @include show-on-tablet;
+//  @include show-on-desktop;
+//  @include show-on-portrait;
+//  @include show-on-landscape;
 //
-//  hide-on-mobile
-//  hide-on-tablet
-//  hide-on-desktop
-//  hide-on-portrait
-//  hide-on-landscape
-
-.show-on-mobile {
+//  @include hide-on-mobile;
+//  @include hide-on-tablet;
+//  @include hide-on-desktop;
+//  @include hide-on-portrait;
+//  @include hide-on-landscape;
+@mixin show-on-mobile {
     @media only screen and (min-width: $tablet-lower-breakpoint) {
-        @include hide;
+        @include advanced-media-queries-hide;
     }
 }
-.show-on-tablet {
+@mixin show-on-tablet {
     @media only screen and (max-width: $mobile-upper-breakpoint) {
-        @include hide;
+        @include advanced-media-queries-hide;
     }
     @media only screen and (min-width: $desktop-lower-breakpoint) {
-        @include hide;
+        @include advanced-media-queries-hide;
     }
 }
-.show-on-desktop {
+@mixin show-on-desktop {
     @media only screen and (max-width: $tablet-upper-breakpoint) {
-        @include hide;
+        @include advanced-media-queries-hide;
     }
 }
-.hide-on-mobile {
-    @media only screen and (max-width: $mobile-upper-breakpoint) {
-        @include hide;
-    }
-}
-.hide-on-tablet {
-    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
-        @include hide;
-    }
-}
-.hide-on-desktop {
-    @media only screen and (min-width: $desktop-lower-breakpoint) {
-        @include hide;
-    }
-}
-.show-on-portrait, .hide-on-landscape {
+@mixin show-on-portrait {
     @media only screen and (orientation: landscape) {
-        @include hide;
+        @include advanced-media-queries-hide;
     }
 }
-.show-on-landscape, .hide-on-portrait {
+@mixin show-on-landscape {
     @media only screen and (orientation: portrait) {
-        @include hide;
+        @include advanced-media-queries-hide;
+    }
+}
+@mixin hide-on-mobile {
+    @media only screen and (max-width: $mobile-upper-breakpoint) {
+        @include advanced-media-queries-hide;
+    }
+}
+@mixin hide-on-tablet {
+    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
+        @include advanced-media-queries-hide;
+    }
+}
+@mixin hide-on-desktop {
+    @media only screen and (min-width: $desktop-lower-breakpoint) {
+        @include advanced-media-queries-hide;
+    }
+}
+@mixin hide-on-portrait {
+    @media only screen and (orientation: portrait) {
+        @include advanced-media-queries-hide;
+    }
+}
+@mixin hide-on-landscape {
+    @media only screen and (orientation: landscape) {
+        @include advanced-media-queries-hide;
     }
 }
 
-//  Mixins available in scss:
+//  Style mixins available in scss:
 //  @include mobile-only-style { style_for_media_query };
 //  @include tablet-only-style { style_for_media_query };
 //  @include desktop-only-style { style_for_media_query };
@@ -120,12 +134,12 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     }
     @if $min {
         @media only screen and (max-width: $min - 1) {
-            @include hide;
+            @include advanced-media-queries-hide;
         }
     }
     @if $max {
         @media only screen and (min-width: $max) {
-            @include hide;
+            @include advanced-media-queries-hide;
         }
     }
 }
@@ -145,7 +159,7 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
         @if $max {
             // only a max value was defined
             @media only screen and (max-width: $max - 1) {
-                @include hide;
+                @include advanced-media-queries-hide;
             }
         }
     }
@@ -153,13 +167,13 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
         @if not $max {
             // only a min value was defined
             @media only screen and (min-width: $min) {
-                @include hide;
+                @include advanced-media-queries-hide;
             }
         }
         @if $max {
             // both a min and max value were defined
             @media only screen and (min-width: $min) and (max-width: $max - 1) {
-                @include hide;
+                @include advanced-media-queries-hide;
             }
         }
     }
