@@ -1,6 +1,6 @@
 # advanced-media-queries
 
-CSS classes and [Sass mixins](http://sass-lang.com/) useful in responsive design.
+CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design.
 
 [How to use Sass](http://sass-lang.com/guide)  
 [Sass Documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)  
