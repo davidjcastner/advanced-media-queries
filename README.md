@@ -1,4 +1,4 @@
-# advanced-media-queries
+# smart-media-queries
 
 CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design.
 
@@ -28,12 +28,12 @@ CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design
 ## Installing
 
 ```scss
-// Advanced Media Queries
-@import "advanced-media-queries";
+// Smart Media Queries
+@import "smart-media-queries";
 
-// or Advanced Media Queries with css classes available
+// or Smart Media Queries with css classes available
 // automatically includes the normal package
-@import "advanced-media-queries-classes";
+@import "smart-media-queries-classes";
 ```
 
 ## Browser Support
@@ -46,13 +46,13 @@ Supported by any browser that fully supports @media. You can check [w3schools.co
 
 ## CSS Classes
 
-Place a copy of either `advanced-media-queries.css` or `advanced-media-queries.min.css` in your project. Then include the following in your HTML head:
+Place a copy of either `smart-media-queries.css` or `smart-media-queries.min.css` in your project. Then include the following in your HTML head:
 
 ```html
-<!-- if using advanced-media-queries.css -->
-<link rel="stylesheet" href="/path/to/css/file/advanced-media-queries.css">
+<!-- if using smart-media-queries.css -->
+<link rel="stylesheet" href="/path/to/css/file/smart-media-queries.css">
 <!-- else -->
-<link rel="stylesheet" href="/path/to/css/file/advanced-media-queries.min.css">
+<link rel="stylesheet" href="/path/to/css/file/smart-media-queries.min.css">
 ```
 
 #### Show Classes
@@ -86,35 +86,35 @@ Including any of the classes below on an html element will cause it to be hidden
 To use the SCSS mixins, including the following at the top of your SCSS code:
 
 ```scss
-// if _advanced-media-queries.scss is in the same directory
-@import "advanced-media-queries";
+// if _smart-media-queries.scss is in the same directory
+@import "smart-media-queries";
 // else
-@import "/path/to/file/advanced-media-queries";
+@import "/path/to/file/smart-media-queries";
 ```
 
-**(Optional) Including the CSS classes:** If you would like to have Advanced Media Queries's CSS classes available along with the SCSS mixins include the following at the top of your SCSS code:
+**(Optional) Including the CSS classes:** If you would like to have Smart Media Queries's CSS classes available along with the SCSS mixins include the following at the top of your SCSS code:
 
 ```scss
-// automatically includes "advanced-media-queries",
-// so no need to @import "advanced-media-queries";
+// automatically includes "smart-media-queries",
+// so no need to @import "smart-media-queries";
 
-// if _advanced-media-queries-classes.scss is in the same directory
-@import "advanced-media-queries-classes";
+// if _smart-media-queries-classes.scss is in the same directory
+@import "smart-media-queries-classes";
 // else
-@import "/path/to/file/advanced-media-queries-classes";
+@import "/path/to/file/smart-media-queries-classes";
 ```
 
 #### Helpers
 
-**advanced-media-queries-hide**
+**smart-media-queries-hide**
 
 Hides the content, equivalent to  `{ display: none !important; }`
 
 ```scss
-@mixin advanced-media-queries-hide;
+@mixin smart-media-queries-hide;
 // hides the content
 // how to use:
-@include advanced-media-queries-hide;
+@include smart-media-queries-hide;
 ```
 
 #### Show Mixins
@@ -289,5 +289,5 @@ $style-max-breakpoint: $insert_breakpoint_as_pixel_value;
 
 ## Frequently Asked Questions
 
-**Question:** How is mobile, tablet, and desktop defined for Advanced Media Queries?  
+**Question:** How is mobile, tablet, and desktop defined for Smart Media Queries?  
 **Answer:** Mobile is defined as the screen width being less than 768px. Tablet is defined as the screen width being greater than or equal to 768px and less than 1024px. Desktop is defined as the screen width being greater than or equal to 1024px.

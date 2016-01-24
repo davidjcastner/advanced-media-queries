@@ -1,9 +1,9 @@
-/* Advanced Media Queries v1.0 */
+/* Smart Media Queries v1.0 */
 //  David Castner
 
 //  How to use:
 //  include this in at the top of your scss file
-//  @import "/path/to/file/advanced-media-queries";
+//  @import "/path/to/file/smart-media-queries";
 
 //  Platform breakpoints
 //           mobile  <  MTB
@@ -17,8 +17,8 @@ $tablet-upper-breakpoint: $tablet-desktop-breakpoint - 1;
 $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 
 //  Helpers
-//  @include advanced-media-queries-hide;
-@mixin advanced-media-queries-hide { display: none !important; };
+//  @include smart-media-queries-hide;
+@mixin smart-media-queries-hide { display: none !important; };
 
 //  Display mixins available in scss:
 //
@@ -35,55 +35,55 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 //  @include hide-on-landscape;
 @mixin show-on-mobile {
     @media only screen and (min-width: $tablet-lower-breakpoint) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin show-on-tablet {
     @media only screen and (max-width: $mobile-upper-breakpoint) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
     @media only screen and (min-width: $desktop-lower-breakpoint) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin show-on-desktop {
     @media only screen and (max-width: $tablet-upper-breakpoint) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin show-on-portrait {
     @media only screen and (orientation: landscape) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin show-on-landscape {
     @media only screen and (orientation: portrait) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin hide-on-mobile {
     @media only screen and (max-width: $mobile-upper-breakpoint) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin hide-on-tablet {
     @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin hide-on-desktop {
     @media only screen and (min-width: $desktop-lower-breakpoint) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin hide-on-portrait {
     @media only screen and (orientation: portrait) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 @mixin hide-on-landscape {
     @media only screen and (orientation: landscape) {
-        @include advanced-media-queries-hide;
+        @include smart-media-queries-hide;
     }
 };
 
@@ -134,12 +134,12 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     };
     @if $min {
         @media only screen and (max-width: $min - 1) {
-            @include advanced-media-queries-hide;
+            @include smart-media-queries-hide;
         }
     };
     @if $max {
         @media only screen and (min-width: $max) {
-            @include advanced-media-queries-hide;
+            @include smart-media-queries-hide;
         }
     };
 };
@@ -159,7 +159,7 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
         @if $max {
             // only a max value was defined
             @media only screen and (max-width: $max - 1) {
-                @include advanced-media-queries-hide;
+                @include smart-media-queries-hide;
             }
         };
     };
@@ -167,13 +167,13 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
         @if not $max {
             // only a min value was defined
             @media only screen and (min-width: $min) {
-                @include advanced-media-queries-hide;
+                @include smart-media-queries-hide;
             }
         };
         @if $max {
             // both a min and max value were defined
             @media only screen and (min-width: $min) and (max-width: $max - 1) {
-                @include advanced-media-queries-hide;
+                @include smart-media-queries-hide;
             }
         };
     };
