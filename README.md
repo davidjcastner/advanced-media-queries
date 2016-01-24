@@ -155,7 +155,7 @@ To use the SCSS mixins, including the following at the top of your SCSS code:
 
 #### Helpers
 
-**smart-media-queries-hide**
+##### smart-media-queries-hide
 
 Hides the content, equivalent to  `{ display: none !important; }`
 
