@@ -161,8 +161,8 @@
 <span class="pl-c">&lt;!-- else --&gt;</span>
 &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>/path/to/css/file/smart-media-queries.min.css<span class="pl-pds">"</span></span>&gt;</pre></div>
 
-<h4>
-<a id="show-classes" class="anchor" href="#show-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Show Classes</h4>
+<h3>
+<a id="show-classes" class="anchor" href="#show-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Show Classes</h3>
 
 <p>Including any of the classes below on an html element will cause it to only show on the media specified.</p>
 
@@ -197,8 +197,8 @@
 </tbody>
 </table>
 
-<h4>
-<a id="hide-classes" class="anchor" href="#hide-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hide Classes</h4>
+<h3>
+<a id="hide-classes" class="anchor" href="#hide-classes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hide Classes</h3>
 
 <p>Including any of the classes below on an html element will cause it to be hidden on the media specified.</p>
 
@@ -233,8 +233,8 @@
 </tbody>
 </table>
 
-<h4>
-<a id="css-examples" class="anchor" href="#css-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CSS Examples</h4>
+<h3>
+<a id="css-examples" class="anchor" href="#css-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CSS Examples</h3>
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">html</span>&gt;
   &lt;<span class="pl-ent">head</span>&gt;
@@ -275,11 +275,11 @@
 <span class="pl-c">// else</span>
 <span class="pl-k">@import</span> "<span class="pl-v">/path/to/file/smart-media-queries-classes</span>";</pre></div>
 
-<h4>
-<a id="helpers" class="anchor" href="#helpers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Helpers</h4>
+<h3>
+<a id="helpers" class="anchor" href="#helpers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Helpers</h3>
 
-<h5>
-<a id="smart-media-queries-hide" class="anchor" href="#smart-media-queries-hide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>smart-media-queries-hide</h5>
+<h4>
+<a id="smart-media-queries-hide" class="anchor" href="#smart-media-queries-hide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>smart-media-queries-hide</h4>
 
 <p>Hides the content, equivalent to  <code>{ display: none !important; }</code></p>
 
@@ -288,8 +288,8 @@
 <span class="pl-c">// how to use:</span>
 <span class="pl-k">@include</span> <span class="pl-c1">smart-media-queries-hide</span>;</pre></div>
 
-<h4>
-<a id="show-mixins" class="anchor" href="#show-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Show Mixins</h4>
+<h3>
+<a id="show-mixins" class="anchor" href="#show-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Show Mixins</h3>
 
 <p>Selectors with one of the <strong>show-on</strong> mixins will cause the selector to only be displayed on the specified media.</p>
 
@@ -322,8 +322,8 @@
 <span class="pl-c">// how to use:</span>
 <span class="pl-k">@include</span> <span class="pl-c1">show-on-landscape</span>;</pre></div>
 
-<h4>
-<a id="hide-mixins" class="anchor" href="#hide-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hide Mixins</h4>
+<h3>
+<a id="hide-mixins" class="anchor" href="#hide-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hide Mixins</h3>
 
 <p>Selectors with one of the <strong>hide-on</strong> mixins will cause the selector to be hidden on the specified media.</p>
 
@@ -356,8 +356,8 @@
 <span class="pl-c">// how to use:</span>
 <span class="pl-k">@include</span> <span class="pl-c1">hide-on-landscape</span>;</pre></div>
 
-<h4>
-<a id="style-mixins" class="anchor" href="#style-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Style Mixins</h4>
+<h3>
+<a id="style-mixins" class="anchor" href="#style-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Style Mixins</h3>
 
 <p>Selectors with one of the <strong>only-style</strong> mixins will cause the selector to be given the style on the specified media. The style can be passed to it through the @content arguement, there is no limit to how much can be passed.</p>
 
@@ -394,11 +394,11 @@
 <span class="pl-c">// how to use:</span>
 <span class="pl-k">@include</span> <span class="pl-c1">landscape-only-style</span> { <span class="pl-k">@content</span> };</pre></div>
 
-<h4>
-<a id="custom-breakpoint-mixins" class="anchor" href="#custom-breakpoint-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Breakpoint Mixins</h4>
+<h3>
+<a id="custom-breakpoint-mixins" class="anchor" href="#custom-breakpoint-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom Breakpoint Mixins</h3>
 
-<h5>
-<a id="custom-breakpoint-show-min-max" class="anchor" href="#custom-breakpoint-show-min-max" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-show ([$min], [$max])</h5>
+<h4>
+<a id="custom-breakpoint-show-min-max" class="anchor" href="#custom-breakpoint-show-min-max" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-show ([$min], [$max])</h4>
 
 <p>Allows elements to only be displayed for a custom breakpoint. At least one of $min or $max must be defined and both must be a pixel value. The elements will only be displayed if the condition is met: $min &lt;= screen width &lt; $max.</p>
 
@@ -415,8 +415,8 @@
 <span class="pl-c">// only displays the element if: $min &lt;= screen width &lt; $max</span>
 <span class="pl-k">@include</span> <span class="pl-c1">custom-breakpoint-show</span>(<span class="pl-smi">$min</span><span class="pl-v">:</span> <span class="pl-smi">$show-min-breakpoint</span>, <span class="pl-smi">$max</span><span class="pl-v">:</span> <span class="pl-smi">$show-max-breakpoint</span>);</pre></div>
 
-<h5>
-<a id="custom-breakpoint-hide-min-max" class="anchor" href="#custom-breakpoint-hide-min-max" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-hide ([$min], [$max])</h5>
+<h4>
+<a id="custom-breakpoint-hide-min-max" class="anchor" href="#custom-breakpoint-hide-min-max" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-hide ([$min], [$max])</h4>
 
 <p>Allows elements to be hidden for a custom breakpoint. At least one of $min or $max must be defined and both must be a pixel value. The elements will be hidden if the condition is met: $min &lt;= screen width &lt; $max.</p>
 
@@ -433,8 +433,8 @@
 <span class="pl-c">// hides the element if: $min &lt;= screen width &lt; $max</span>
 <span class="pl-k">@include</span> <span class="pl-c1">custom-breakpoint-hide</span>(<span class="pl-smi">$min</span><span class="pl-v">:</span> <span class="pl-smi">$hide-min-breakpoint</span>, <span class="pl-smi">$max</span><span class="pl-v">:</span> <span class="pl-smi">$hide-max-breakpoint</span>);</pre></div>
 
-<h5>
-<a id="custom-breakpoint-style-min-max--content-" class="anchor" href="#custom-breakpoint-style-min-max--content-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-style ([$min], [$max]) { @content }</h5>
+<h4>
+<a id="custom-breakpoint-style-min-max--content-" class="anchor" href="#custom-breakpoint-style-min-max--content-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-style ([$min], [$max]) { @content }</h4>
 
 <p>Applies styling to elements for a custom breakpoint. At least one of $min or $max must be defined and both must be a pixel value. The style can be passed to it through the @content arguement. The styling will be applied if the condition is met: $min &lt;= screen width &lt; $max.</p>
 
@@ -455,8 +455,8 @@
 <span class="pl-c">// applies the styling to the element if: $min &lt;= screen width &lt; $max</span>
 <span class="pl-k">@include</span> <span class="pl-c1">custom-breakpoint-style</span>(<span class="pl-smi">$min</span><span class="pl-v">:</span> <span class="pl-smi">$style-min-breakpoint</span>, <span class="pl-smi">$max</span><span class="pl-v">:</span> <span class="pl-smi">$style-max-breakpoint</span>) { <span class="pl-k">@content</span> };</pre></div>
 
-<h4>
-<a id="scss-examples" class="anchor" href="#scss-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SCSS Examples</h4>
+<h3>
+<a id="scss-examples" class="anchor" href="#scss-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SCSS Examples</h3>
 
 <div class="highlight highlight-source-scss"><pre><span class="pl-k">@import</span> "<span class="pl-v">smart-media-queries</span>";
 
