@@ -1,6 +1,6 @@
 # smart-media-queries
 
-**Smart Media Queries v1.0.0**
+**Smart Media Queries v1.1.0**
 
 CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design
 
@@ -29,9 +29,40 @@ CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design
 
 ## Installing
 
-Download from GitHub and copy the correct files into your project.  
-[CSS Classes](#css-classes)  
-[SCSS Mixins](#scss-mixins)  
+**Download Smart Media Queries**
+
+**[Download zip](https://github.com/davidjcastner/smart-media-queries/zipball/master)**  
+**[Download tar.gz](https://github.com/davidjcastner/smart-media-queries/tarball/master)**
+
+**For CSS Classes:** Place a copy of either `smart-media-queries.css` or `smart-media-queries.min.css` in your project. Then include the following in your HTML head:
+
+```html
+<!-- if using smart-media-queries.css -->
+<link rel="stylesheet" href="/path/to/css/file/smart-media-queries.css">
+<!-- else -->
+<link rel="stylesheet" href="/path/to/css/file/smart-media-queries.min.css">
+```
+
+**For SCSS Mixins:** Include the following at the top of your SCSS code:
+
+```scss
+// if _smart-media-queries.scss is in the same directory
+@import "smart-media-queries";
+// else
+@import "/path/to/file/smart-media-queries";
+```
+
+**(Optional) Including the CSS classes:** If you would like to have Smart Media Queries's CSS classes available along with the SCSS mixins include the following at the top of your SCSS code:
+
+```scss
+// automatically includes "smart-media-queries",
+// so no need to @import "smart-media-queries";
+
+// if _smart-media-queries-classes.scss is in the same directory
+@import "smart-media-queries-classes";
+// else
+@import "/path/to/file/smart-media-queries-classes";
+```
 
 ## Browser Support
 
