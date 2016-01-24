@@ -315,7 +315,7 @@ $hide-max-breakpoint: $insert_breakpoint_as_pixel_value;
 
 ##### custom-breakpoint-style ([$min], [$max]) { @content }
 
-Applies styling to elements for a custom breakpoint. At least one of $min or $max must be defined and both must be a pixel value. The will be applied if the condition is met: $min <= screen width < $max.
+Applies styling to elements for a custom breakpoint. At least one of $min or $max must be defined and both must be a pixel value. The style can be passed to it through the @content arguement. The styling will be applied if the condition is met: $min <= screen width < $max.
 
 > @content passes a block of styles to the mixin
 
