@@ -1,0 +1,8 @@
+/**
+ * smart-media-queries - Smart Media Queries
+ * @version v1.0.0
+ * @license MIT
+ * @copyright 2016 David J Castner
+ * @link https://github.com/davidjcastner/smart-media-queries
+ */
+ @media only screen and (min-width: 768px){.show-on-mobile{display:none !important}}@media only screen and (max-width: 767px){.show-on-tablet{display:none !important}}@media only screen and (min-width: 1024px){.show-on-tablet{display:none !important}}@media only screen and (max-width: 1023px){.show-on-desktop{display:none !important}}@media only screen and (orientation: landscape){.show-on-portrait{display:none !important}}@media only screen and (orientation: portrait){.show-on-landscape{display:none !important}}@media only screen and (max-width: 767px){.hide-on-mobile{display:none !important}}@media only screen and (min-width: 768px) and (max-width: 1023px){.hide-on-tablet{display:none !important}}@media only screen and (min-width: 1024px){.hide-on-desktop{display:none !important}}@media only screen and (orientation: portrait){.hide-on-portrait{display:none !important}}@media only screen and (orientation: landscape){.hide-on-landscape{display:none !important}}

@@ -1,6 +1,8 @@
 # smart-media-queries
 
-CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design.
+**Smart Media Queries v1.0.0**
+
+CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design
 
 [How to use Sass](http://sass-lang.com/guide)  
 [Sass Documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)  
