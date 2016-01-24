@@ -2,7 +2,7 @@
 
 **Smart Media Queries v1.1.0**
 
-CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design
+CSS classes and [Sass](http://sass-lang.com/) mixins for responsive design
 
 [How to use Sass](http://sass-lang.com/guide)  
 [Sass Documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)  
