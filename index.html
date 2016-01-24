@@ -124,7 +124,7 @@
 <h2>
 <a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser Support</h2>
 
-<p>Supported by any browser that fully supports <a href="https://github.com/media" class="user-mention">@media</a>. You can check <a href="http://www.w3schools.com/cssref/css3_pr_mediaquery.asp">w3schools.com</a> for more information.</p>
+<p>Supported by any browser that fully supports @media. You can check <a href="http://www.w3schools.com/cssref/css3_pr_mediaquery.asp">w3schools.com</a> for more information.</p>
 
 <table>
 <thead>
@@ -359,10 +359,10 @@
 <h4>
 <a id="style-mixins" class="anchor" href="#style-mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Style Mixins</h4>
 
-<p>Selectors with one of the <strong>only-style</strong> mixins will cause the selector to be given the style on the specified media. The style can be passed to it through the <a href="https://github.com/content" class="user-mention">@content</a> arguement, there is no limit to how much can be passed.</p>
+<p>Selectors with one of the <strong>only-style</strong> mixins will cause the selector to be given the style on the specified media. The style can be passed to it through the @content arguement, there is no limit to how much can be passed.</p>
 
 <blockquote>
-<p><a href="https://github.com/content" class="user-mention">@content</a> passes a block of styles to the mixin</p>
+<p>@content passes a block of styles to the mixin</p>
 </blockquote>
 
 <div class="highlight highlight-source-scss"><pre><span class="pl-k">@mixin</span> <span class="pl-en">mobile-only-style</span> { <span class="pl-k">@content</span> };
@@ -434,12 +434,12 @@
 <span class="pl-k">@include</span> <span class="pl-c1">custom-breakpoint-hide</span>(<span class="pl-smi">$min</span><span class="pl-v">:</span> <span class="pl-smi">$hide-min-breakpoint</span>, <span class="pl-smi">$max</span><span class="pl-v">:</span> <span class="pl-smi">$hide-max-breakpoint</span>);</pre></div>
 
 <h5>
-<a id="custom-breakpoint-style-min-max--content-" class="anchor" href="#custom-breakpoint-style-min-max--content-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-style ([$min], [$max]) { <a href="https://github.com/content" class="user-mention">@content</a> }</h5>
+<a id="custom-breakpoint-style-min-max--content-" class="anchor" href="#custom-breakpoint-style-min-max--content-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>custom-breakpoint-style ([$min], [$max]) { @content }</h5>
 
-<p>Applies styling to elements for a custom breakpoint. At least one of $min or $max must be defined and both must be a pixel value. The will be applied if the condition is met: $min &lt;= screen width &lt; $max.</p>
+<p>Applies styling to elements for a custom breakpoint. At least one of $min or $max must be defined and both must be a pixel value. The style can be passed to it through the @content arguement. The styling will be applied if the condition is met: $min &lt;= screen width &lt; $max.</p>
 
 <blockquote>
-<p><a href="https://github.com/content" class="user-mention">@content</a> passes a block of styles to the mixin</p>
+<p>@content passes a block of styles to the mixin</p>
 </blockquote>
 
 <div class="highlight highlight-source-scss"><pre><span class="pl-k">@mixin</span> <span class="pl-en">custom-breakpoint-style</span> ([<span class="pl-smi">$min</span>], [<span class="pl-smi">$max</span>]) { <span class="pl-k">@content</span> };
