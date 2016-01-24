@@ -27,14 +27,9 @@ CSS classes and [Sass](http://sass-lang.com/) mixins useful in responsive design
 
 ## Installing
 
-```scss
-// Smart Media Queries
-@import "smart-media-queries";
-
-// or Smart Media Queries with css classes available
-// automatically includes the normal package
-@import "smart-media-queries-classes";
-```
+Download from GitHub and copy the correct files into your project.  
+[CSS Classes](#css-classes)  
+[SCSS Mixins](#scss-mixins)  
 
 ## Browser Support
 
@@ -80,6 +75,27 @@ Including any of the classes below on an html element will cause it to be hidden
 | `hide-on-landscape` | Hidden on landscape |
 
 #### CSS Examples
+
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="/path/to/css/file/smart-media-queries.min.css">
+  </head>
+  <body>
+    <div class="show-on-mobile">This only shows up on mobile</div>
+    <div class="show-on-tablet">This only shows up on tablet</div>
+    <div class="show-on-desktop">This only shows up on desktop</div>
+    <div class="show-on-portrait">This only shows up on portrait</div>
+    <div class="show-on-landscape">This only shows up on landscape</div>
+    <div class="hide-on-mobile">This is hidden on mobile</div>
+    <div class="hide-on-tablet">This is hidden on tablet</div>
+    <div class="hide-on-desktop">This is hidden on desktop</div>
+    <div class="hide-on-portrait">This is hidden on portrait</div>
+    <div class="hide-on-landscape">This is hidden on landscape</div>
+    <div class="show-on-mobile show-on-portrait">This only shows up on mobile portrait</div>
+  </body>
+</html>
+```
 
 ## SCSS Mixins
 
@@ -237,11 +253,11 @@ Allows elements to only be displayed for a custom breakpoint. At least one of $m
 // how to use:
 $show-min-breakpoint: $insert_breakpoint_as_pixel_value;
 $show-max-breakpoint: $insert_breakpoint_as_pixel_value;
-// only displays the element if $min <= screen width
+// only displays the element if: $min <= screen width
 @include custom-breakpoint-show($min: $show-min-breakpoint);
-// only displays the element if screen width < $max
+// only displays the element if: screen width < $max
 @include custom-breakpoint-show($max: $show-max-breakpoint);
-// only displays the element if $min <= screen width < $max
+// only displays the element if: $min <= screen width < $max
 @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
 ```
 
@@ -256,11 +272,11 @@ Allows elements to be hidden for a custom breakpoint. At least one of $min or $m
 // how to use:
 $hide-min-breakpoint: $insert_breakpoint_as_pixel_value;
 $hide-max-breakpoint: $insert_breakpoint_as_pixel_value;
-// hides the element if $min <= screen width
+// hides the element if: $min <= screen width
 @include custom-breakpoint-hide($min: $hide-min-breakpoint);
-// hides the element if screen width < $max
+// hides the element if: screen width < $max
 @include custom-breakpoint-hide($max: $hide-max-breakpoint);
-// hides the element if $min <= screen width < $max
+// hides the element if: $min <= screen width < $max
 @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
 ```
 
@@ -277,15 +293,99 @@ Applies styling to elements for a custom breakpoint. At least one of $min or $ma
 // how to use:
 $style-min-breakpoint: $insert_breakpoint_as_pixel_value;
 $style-max-breakpoint: $insert_breakpoint_as_pixel_value;
-// applies the styling to the element if $min <= screen width
+// applies the styling to the element if: $min <= screen width
 @include custom-breakpoint-style($min: $style-min-breakpoint) { @content };
-// applies the styling to the element if screen width < $max
+// applies the styling to the element if: screen width < $max
 @include custom-breakpoint-style($max: $style-max-breakpoint) { @content };
-// applies the styling to the element if $min <= screen width < $max
+// applies the styling to the element if: $min <= screen width < $max
 @include custom-breakpoint-style($min: $style-min-breakpoint, $max: $style-max-breakpoint) { @content };
 ```
 
 #### SCSS Examples
+
+```scss
+@import "smart-media-queries";
+
+.mobile-landscape-element {
+    // only displays the element on mobile landscape
+    @include show-on-mobile;
+    @include show-on-landscape;
+}
+
+.hide-on-desktop-portrait {
+    // hides the element on desktop portrait
+    @include hide-on-desktop;
+    @include hide-on-portrait;
+}
+
+.change-font-color {
+    // changes the font color:
+    // mobile & portrait: red
+    // mobile & landscape: yellow
+    // tablet & portrait: green
+    // tablet & landscape: cyan
+    // desktop & portrait: blue
+    // desktop & landscape: violet
+    @include mobile-only-style {
+        @include portrait-only-style { color: #ff0000; };
+        @include landscape-only-style { color: #ffff00; };
+    };
+    @include tablet-only-style {
+        @include portrait-only-style { color: #00ff00; };
+        @include landscape-only-style { color: #00ffff; };
+    };
+    @include desktop-only-style {
+        @include portrait-only-style { color: #0000ff; };
+        @include landscape-only-style { color: #ff00ff; };
+    };
+}
+
+$show-min-breakpoint: 600px;
+$show-max-breakpoint: 900px;
+$hide-min-breakpoint: 900px;
+$hide-max-breakpoint: 1100px;
+.custom-show-min {
+    // only displays the element if: 600px <= screen width
+    @include custom-breakpoint-show($min: $show-min-breakpoint);
+}
+.custom-show-max {
+    // only displays the element if: screen width < 900px
+    @include custom-breakpoint-show($max: $show-max-breakpoint);
+}
+.custom-show-min-max {
+    // only displays the element if: 600px <= screen width < 900px
+    @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
+}
+.custom-hide-min {
+    // hides the element if: 900px <= screen width
+    @include custom-breakpoint-hide($min: $hide-min-breakpoint);
+}
+.custom-hide-max {
+    // hides the element if: screen width < 1100px
+    @include custom-breakpoint-hide($max: $hide-max-breakpoint);
+}
+.custom-hide-min-max {
+    // hides the element if: 900px <= screen width < 1100px
+    @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
+}
+
+$style-breakpoint-one: 800px;
+$style-breakpoint-two: 1000px;
+.custom-style {
+    // changes the font color to red if: screen width < 800px
+    @include custom-breakpoint-style($max: $style-breakpoint-one) {
+        color: #ff0000;
+    };
+    // changes the font color to green if: 800px <= screen width < 1000px
+    @include custom-breakpoint-style($min: $style-breakpoint-one, $max: $style-breakpoint-two) {
+        color: #00ff00;
+    };
+    // changes the font color to blue if: 1000px <= screen width
+    @include custom-breakpoint-style($min: $style-breakpoint-two) {
+        color: #0000ff;
+    };
+}
+```
 
 ## Frequently Asked Questions
 

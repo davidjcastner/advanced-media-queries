@@ -9,12 +9,12 @@
 //           mobile  <  MTB
 //  MTB  <=  tablet  <  TDB
 //  TDB  <   desktop
-$mobile-tablet-breakpoint: 768px;   // (MTB)
-$tablet-desktop-breakpoint: 1024px; // (TDB)
-$mobile-upper-breakpoint: $mobile-tablet-breakpoint - 1;
-$tablet-lower-breakpoint: $mobile-tablet-breakpoint;
-$tablet-upper-breakpoint: $tablet-desktop-breakpoint - 1;
-$desktop-lower-breakpoint: $tablet-desktop-breakpoint;
+$smq-mobile-tablet-breakpoint: 768px;   // (MTB)
+$smq-tablet-desktop-breakpoint: 1024px; // (TDB)
+$smq-mobile-upper-breakpoint: $smq-mobile-tablet-breakpoint - 1;
+$smq-tablet-lower-breakpoint: $smq-mobile-tablet-breakpoint;
+$smq-tablet-upper-breakpoint: $smq-tablet-desktop-breakpoint - 1;
+$smq-desktop-lower-breakpoint: $smq-tablet-desktop-breakpoint;
 
 //  Helpers
 //  @include smart-media-queries-hide;
@@ -34,20 +34,20 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 //  @include hide-on-portrait;
 //  @include hide-on-landscape;
 @mixin show-on-mobile {
-    @media only screen and (min-width: $tablet-lower-breakpoint) {
+    @media only screen and (min-width: $smq-tablet-lower-breakpoint) {
         @include smart-media-queries-hide;
     }
 };
 @mixin show-on-tablet {
-    @media only screen and (max-width: $mobile-upper-breakpoint) {
+    @media only screen and (max-width: $smq-mobile-upper-breakpoint) {
         @include smart-media-queries-hide;
     }
-    @media only screen and (min-width: $desktop-lower-breakpoint) {
+    @media only screen and (min-width: $smq-desktop-lower-breakpoint) {
         @include smart-media-queries-hide;
     }
 };
 @mixin show-on-desktop {
-    @media only screen and (max-width: $tablet-upper-breakpoint) {
+    @media only screen and (max-width: $smq-tablet-upper-breakpoint) {
         @include smart-media-queries-hide;
     }
 };
@@ -62,17 +62,17 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
     }
 };
 @mixin hide-on-mobile {
-    @media only screen and (max-width: $mobile-upper-breakpoint) {
+    @media only screen and (max-width: $smq-mobile-upper-breakpoint) {
         @include smart-media-queries-hide;
     }
 };
 @mixin hide-on-tablet {
-    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
+    @media only screen and (min-width: $smq-tablet-lower-breakpoint) and (max-width: $smq-tablet-upper-breakpoint) {
         @include smart-media-queries-hide;
     }
 };
 @mixin hide-on-desktop {
-    @media only screen and (min-width: $desktop-lower-breakpoint) {
+    @media only screen and (min-width: $smq-desktop-lower-breakpoint) {
         @include smart-media-queries-hide;
     }
 };
@@ -94,17 +94,17 @@ $desktop-lower-breakpoint: $tablet-desktop-breakpoint;
 //  @include portrait-only-style { style_for_media_query };
 //  @include landscape-only-style { style_for_media_query };
 @mixin mobile-only-style {
-    @media only screen and (max-width: $mobile-upper-breakpoint) {
+    @media only screen and (max-width: $smq-mobile-upper-breakpoint) {
         @content;
     }
 };
 @mixin tablet-only-style {
-    @media only screen and (min-width: $tablet-lower-breakpoint) and (max-width: $tablet-upper-breakpoint) {
+    @media only screen and (min-width: $smq-tablet-lower-breakpoint) and (max-width: $smq-tablet-upper-breakpoint) {
         @content;
     }
 };
 @mixin desktop-only-style {
-    @media only screen and (min-width: $desktop-lower-breakpoint) {
+    @media only screen and (min-width: $smq-desktop-lower-breakpoint) {
         @content;
     }
 };

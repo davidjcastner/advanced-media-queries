@@ -1,0 +1,81 @@
+@import "smart-media-queries";
+
+.mobile-landscape-element {
+    // only displays the element on mobile landscape
+    @include show-on-mobile;
+    @include show-on-landscape;
+}
+
+.hide-on-desktop-portrait {
+    // hides the element on desktop portrait
+    @include hide-on-desktop;
+    @include hide-on-portrait;
+}
+
+.change-font-color {
+    // changes the font color:
+    // mobile & portrait: red
+    // mobile & landscape: yellow
+    // tablet & portrait: green
+    // tablet & landscape: cyan
+    // desktop & portrait: blue
+    // desktop & landscape: violet
+    @include mobile-only-style {
+        @include portrait-only-style { color: #ff0000; };
+        @include landscape-only-style { color: #ffff00; };
+    };
+    @include tablet-only-style {
+        @include portrait-only-style { color: #00ff00; };
+        @include landscape-only-style { color: #00ffff; };
+    };
+    @include desktop-only-style {
+        @include portrait-only-style { color: #0000ff; };
+        @include landscape-only-style { color: #ff00ff; };
+    };
+}
+
+$show-min-breakpoint: 600px;
+$show-max-breakpoint: 900px;
+$hide-min-breakpoint: 900px;
+$hide-max-breakpoint: 1100px;
+.custom-show-min {
+    // only displays the element if: 600px <= screen width
+    @include custom-breakpoint-show($min: $show-min-breakpoint);
+}
+.custom-show-max {
+    // only displays the element if: screen width < 900px
+    @include custom-breakpoint-show($max: $show-max-breakpoint);
+}
+.custom-show-min-max {
+    // only displays the element if: 600px <= screen width < 900px
+    @include custom-breakpoint-show($min: $show-min-breakpoint, $max: $show-max-breakpoint);
+}
+.custom-hide-min {
+    // hides the element if: 900px <= screen width
+    @include custom-breakpoint-hide($min: $hide-min-breakpoint);
+}
+.custom-hide-max {
+    // hides the element if: screen width < 1100px
+    @include custom-breakpoint-hide($max: $hide-max-breakpoint);
+}
+.custom-hide-min-max {
+    // hides the element if: 900px <= screen width < 1100px
+    @include custom-breakpoint-hide($min: $hide-min-breakpoint, $max: $hide-max-breakpoint);
+}
+
+$style-breakpoint-one: 800px;
+$style-breakpoint-two: 1000px;
+.custom-style {
+    // changes the font color to red if: screen width < 800px
+    @include custom-breakpoint-style($max: $style-breakpoint-one) {
+        color: #ff0000;
+    };
+    // changes the font color to green if: 800px <= screen width < 1000px
+    @include custom-breakpoint-style($min: $style-breakpoint-one, $max: $style-breakpoint-two) {
+        color: #00ff00;
+    };
+    // changes the font color to blue if: 1000px <= screen width
+    @include custom-breakpoint-style($min: $style-breakpoint-two) {
+        color: #0000ff;
+    };
+}
