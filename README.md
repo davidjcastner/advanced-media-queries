@@ -52,7 +52,7 @@ CSS classes and [Sass](http://sass-lang.com/) mixins for responsive design
 @import "/path/to/file/smart-media-queries";
 ```
 
-**For SCSS Mixins and CSS classes:** Place a copy of `_smart-media.queries.scss` and `_smart-media.queries-classes.scss` in your project (they should be in the same directory). If you would like to have Smart Media Queries's CSS classes available along with the SCSS mixins include the following at the top of your SCSS code:
+**For SCSS Mixins and CSS classes:** Place a copy of `_smart-media.queries.scss` and `_smart-media.queries-classes.scss` in your project (they should be in the same directory). If you would like to have Smart Media Queries's CSS classes available along with the SCSS mixins, include the following at the top of your SCSS code:
 
 ```scss
 // automatically includes "smart-media-queries",
@@ -66,7 +66,7 @@ CSS classes and [Sass](http://sass-lang.com/) mixins for responsive design
 
 ## Browser Support
 
-Supported by any browser that fully supports @media. You can check [w3schools.com](http://www.w3schools.com/cssref/css3_pr_mediaquery.asp) for more information.
+Supported by any browser that fully supports @media. You can check [w3schools.com](http://www.w3schools.com/cssref/css3_pr_mediaquery.asp) for more information. Below is the first broswer version that fully supports @media.
 
 | Browser | Chrome | Edge  | Internet Explorer | Firefox | Safari | Opera |
 | ------- | :----: | :---: | :---------------: | :-----: | :----: | :---: |
@@ -238,7 +238,7 @@ Selectors with one of the **hide-on** mixins will cause the selector to be hidde
 
 #### Style Mixins
 
-Selectors with one of the **only-style** mixins will cause the selector to be given the style on the specified media. The style can be passed to it through the @content arguement, there is no limit to how much can be passed.
+Selectors with one of the **only-style** mixins will cause the selector to be given the style on the specified media. The style can be passed to it through the @content arguement. There is no limit to how much can be passed.
 
 > @content passes a block of styles to the mixin
 
