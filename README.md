@@ -1,6 +1,6 @@
 # smart-media-queries
 
-**Smart Media Queries v1.1.0**
+**[Smart Media Queries](http://smartmediaqueries.com/) v1.1.0**
 
 CSS classes and [Sass](http://sass-lang.com/) mixins for responsive design
 
