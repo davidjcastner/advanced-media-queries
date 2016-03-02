@@ -1,0 +1,16 @@
+{
+  "name": "smart-media-queries",
+  "homepage": "smartmediaqueries.com",
+  "authors": [
+    "David Castner <davidjcastner@gmail.com>"
+  ],
+  "description": "A library with CSS classes and Sass mixins for responsive design",
+  "main": "_smart-media-queries.scss",
+  "keywords": [
+    "sass",
+    "media",
+    "queries",
+    "responsive"
+  ],
+  "license": "MIT"
+}
