@@ -34,6 +34,11 @@ CSS classes and [Sass](http://sass-lang.com/) mixins for responsive design
 [Download zip](https://github.com/davidjcastner/smart-media-queries/releases/download/v1.1.0/smart-media-queries.v1.1.0.zip)  
 [Download tar.gz](https://github.com/davidjcastner/smart-media-queries/releases/download/v1.1.0/smart-media-queries.v1.1.0.tar.gz)
 
+**Bower Installation:**
+```sh
+bower install smart-media-queries
+```
+
 **For CSS Classes:** Place a copy of either `smart-media-queries.css` or `smart-media-queries.min.css` in your project. Then include the following in your HTML head:
 
 ```html
