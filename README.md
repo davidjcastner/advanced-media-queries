@@ -1,4 +1,4 @@
-# smart-media-queries
+# [Archived] smart-media-queries
 
 **[Smart Media Queries](http://davidjcastner.github.io/smart-media-queries/) v1.1.0**
 
